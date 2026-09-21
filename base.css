@@ -199,7 +199,12 @@ section + section { border-top: 1px solid var(--line-soft); }
   height: 1px;
   background: linear-gradient(90deg, var(--brown-300), var(--rose-200));
 }
-.rail-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-3); }
+/* Set --rail-count on .rail-steps to match the number of steps (default 6). */
+.rail-steps {
+  display: grid;
+  grid-template-columns: repeat(var(--rail-count, 6), 1fr);
+  gap: var(--space-3);
+}
 .step { position: relative; padding-top: 34px; }
 .step::before {
   content: "";
